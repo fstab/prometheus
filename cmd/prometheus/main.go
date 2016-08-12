@@ -229,7 +229,7 @@ func reloadConfig(filename string, rls ...Reloadable) (err error) {
 
 	// Apply all configs and return the first error if there were any.
 	for _, rl := range rls {
-		if err != nil {
+		if err == nil {
 			err = rl.ApplyConfig(conf)
 		} else {
 			rl.ApplyConfig(conf)
